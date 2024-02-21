@@ -1,0 +1,23 @@
+imagePullSecret: registry-creds
+replicas: 1
+image:
+  name: projects.registry.vmware.com/dsm-consumption-operator/consumption-operator
+  tag: 1.0.0
+dsm:
+  authSecretName: dsm-auth-creds
+
+  # allowedInfrastructurePolicies is a mandatory field that needs to be filled with allowed infrastructure policies for the given consumption cluster
+  allowedInfrastructurePolicies:
+  - global-infra-policy
+ 
+  # allowedBackupLocations is a mandatory field that holds a list of backup locations that can be used by database clusters created in this consumption cluster
+  allowedBackupLocations:
+  - dsm2-db-backup
+ 
+# consumptionClusterName is an optional name that you can provide to identify the Kubernetes cluster where the operator is deployed
+consumptionClusterName: "tkg-v1-23-8-01"
+ 
+# if there is a PSP setting on your k8s cluster, set the below value to true and attach a psp role to it. You can look for
+psp:
+  required: true
+  role: "psp:privileged"

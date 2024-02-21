@@ -1,0 +1,25 @@
+apiVersion: databases.dataservices.vmware.com/v1alpha1
+kind: PostgresCluster
+metadata:
+  name: pg-dev-k8s-01
+  namespace: dev-team
+spec:
+  replicas: 1
+  version: "14"
+  vmClass:
+    name: medium
+  storageSpace: 60Gi
+  infrastructurePolicy:
+    name: global-infra-policy
+  storagePolicyName: "vSAN Default Storage Policy"
+  backupConfig:
+    backupRetentionDays: 30
+    schedules:
+      - name: full-weekly
+        type: full
+        schedule: "0 0 * * 0"
+      - name: incremental-daily
+        type: incremental
+        schedule: "0 0 * * *"
+  backupLocation:
+    name: dsm2-db-backup

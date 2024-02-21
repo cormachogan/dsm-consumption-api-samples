@@ -1,0 +1,20 @@
+# As a Cloud Administrator, you can configure multiple namespaces 
+# with different infrastructure policies and backup locations in 
+# the same consumption cluster.
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-team
+---
+apiVersion: infrastructure.dataservices.vmware.com/v1alpha1
+kind: InfrastructurePolicyBinding
+metadata:
+  name: global-infra-policy
+  namespace: dev-team
+---
+apiVersion: databases.dataservices.vmware.com/v1alpha1
+kind: BackupLocationBinding
+metadata:
+  name: dsm2-db-backup
+  namespace: dev-team
