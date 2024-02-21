@@ -11,6 +11,6 @@ There are 3 files in this repo:
    - the name of the K8s cluster wishing to consume databases on DSM
    - psp/security information
   
-2. dev-team-ns.yaml: This file create a namespace and appropriate DSM info to enable a database to be created
+2. dev-team-ns.yaml: This file create a namespace on the TKGs workload cluster with appropriate DSM info to enable a database to be created
 
 3. pg-by-k8s.yaml: This file contains a manifest which provisions a PostgreSQL database on DSM
