@@ -2,7 +2,7 @@ apiVersion: databases.dataservices.vmware.com/v1alpha1
 kind: MySQLCluster
 metadata:
   name: mysql-dev-cluster
-  namespace: amaury-team
+  namespace: dev-team
 spec:
   members: 1
   version: "8.0.32"
@@ -16,7 +16,7 @@ spec:
         type: full
         schedule: "*/30 * * * *"
   infrastructurePolicy:
-    name: infra-policy-cluster-a-only
+    name: global-infra-policy
   storagePolicyName: "vSAN Default Storage Policy"
   backupLocation:
     name: dsm2-db-backup
