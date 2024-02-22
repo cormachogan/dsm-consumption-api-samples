@@ -14,3 +14,5 @@ There are 3 files in this repo:
 2. dev-team-ns.yaml: This file create a namespace on the TKGs workload cluster with appropriate DSM info to enable a database to be created
 
 3. pg-by-k8s.yaml: This file contains a manifest which provisions a PostgreSQL database on DSM
+
+4. get-connection-string.sh: Returns the psql connection string to connect to the provisioned PostgreSQL database
