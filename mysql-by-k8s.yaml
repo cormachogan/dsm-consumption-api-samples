@@ -1,0 +1,22 @@
+apiVersion: databases.dataservices.vmware.com/v1alpha1
+kind: MySQLCluster
+metadata:
+  name: mysql-dev-cluster
+  namespace: amaury-team
+spec:
+  members: 1
+  version: "8.0.32"
+  vmClass:
+    name: medium
+  storageSpace: 25Gi
+  backupConfig:
+    backupRetentionDays: 30
+    schedules:
+      - name: full-30mins
+        type: full
+        schedule: "*/30 * * * *"
+  infrastructurePolicy:
+    name: infra-policy-cluster-a-only
+  storagePolicyName: "vSAN Default Storage Policy"
+  backupLocation:
+    name: dsm2-db-backup
