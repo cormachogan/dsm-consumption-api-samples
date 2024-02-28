@@ -1,7 +1,10 @@
 # DSM 2.0 - Consumption Operator Samples
 Sample manifest for DSM 2.0 Consumption Operator. The Consumption Operator allows remote K8s clusters to provision databases via DSM Gateway.
 
-These examples were used to connect a TKGs workload cluster (provisioned by vSphere ith Tanzu) to provision a PostgreSQL database on DSM 2.0.
+See the following blog post for details on how to use the Consumption Operator and these files:
+- https://cormachogan.com/2024/02/22/data-services-manager-2-0-part-10-consumption-operator/
+
+These examples were used to connect a TKGs workload cluster (provisioned by vSphere with Tanzu) to provision a PostgreSQL database on DSM 2.0.
 
 There are 3 files in this repo:
 
